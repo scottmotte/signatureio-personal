@@ -1,0 +1,1 @@
+Signatureio.secret_api_key = ENV["SIGNATURE_SECRET_API_KEY"]

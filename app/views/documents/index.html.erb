@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="row">
+    <div class="span10 offset1">
+      <%- if flash[:error] -%>
+        <div class="alert alert-block alert-error"><%= flash[:error] %></div>
+      <%- end -%>
+
+      <%- if flash[:success] -%>
+        <div class="alert alert-block alert-success"><%= flash[:success] %></div>
+      <%- end -%>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span10 offset1">
+      <h4>
+        Signatureio Personal 
+        <small>Example app for using the signatureio rubygem.</small>
+      </h4>
+      <form method="POST" action="/documents" enctype="multipart/form-data">
+        <fieldset>
+          <legend>Add a Document</legend>
+          <div class="row">
+            <div class="span5">
+              <label>Enter a URL</label>
+              <input type="text" name="url" class="span5" placeholder="https://www.signature.io/pdfs/sign-below.pdf">
+              <div class="controls">
+                <input type="submit" class="btn btn-primary" value="Add Document">
+              </div>
+            </div>
+
+            <div class="span4 offset1">
+              <p>Can't think of a URL? Try one of these:</p>
+              <ul>
+                <li>https://www.signature.io/pdfs/sign-below.pdf</li>
+                <li>http://mrslovell.pbworks.com/f/book+report.doc</li>
+                <li>http://lettersofnote.com</li>
+                <li>http://www.rubyinside.com/media/poignant-guide.pdf  (176 pages with imagery)</li>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+
+      <table class="table table-striped">
+        <tr>
+          <th>ID</th>
+          <th>Filename</th>
+          <th>Status</th>
+          <th>Share URL</th>
+        </tr>
+        <% @documents.each do |document| %>
+          <tr>
+            <td>
+              <%= document.id %>
+            </td>
+            <td>
+              <%= truncate(document.filename, length: 30) %>
+            </td>
+            <td>
+              <%= document.status.try(:upcase) %>
+            </td>
+            <td>
+              <a href="<%= document.share_url %>" target="_blank">
+                <%= truncate(document.share_url, length: 50) %>
+              </a>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
+
