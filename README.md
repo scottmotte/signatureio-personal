@@ -2,7 +2,7 @@
 
 Signature.io Personal is an example app demonstrating the use of the Heroku Signature Add-On. See below to get started.
 
-## Get Started
+## Get Started on Heroku
 
 After cloning this repo run the following:
 
@@ -11,11 +11,11 @@ After cloning this repo run the following:
     $ bundle exec heroku addons:add signature
     $ git push heroku master
 
-You should now be able to visit the subdomain heroku gave you and try out the application.
+You should now be able to visit http://YOURSUBDOMAIN.herokuapp.com and use the application!
 
-### Testing Locally
+## Get Started Locally
 
-To test locally you will need to setup an environment variable for your SIGNATURE_SECRET_API_KEY.
+To get started locally, you must first go through the steps to get starte on heroku. After that, you will need to setup an environment variable for your SIGNATURE_SECRET_API_KEY.
 
     $ bundle exec heroku config:get SIGNATURE_SECRET_API_KEY
 
@@ -29,8 +29,4 @@ Now you can run the app locally.
 
 ## Additional Information
 
-This example application heavily uses the [signatureio rubygem](https://github.com/scottmotte/signatureio)
-
-10. bundle exec rails server
-
-11. 
+This app mainly depends on the [signatureio rubygem](https://github.com/scottmotte/signatureio) for interfacing with the Heroku Signature Add-On.
