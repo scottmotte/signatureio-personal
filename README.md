@@ -1,6 +1,6 @@
 # Signature.io Personal
 
-Signature.io Personal is an example app using the Heroku Signature Add-On. See below to Get Started.
+Signature.io Personal is an example app demonstrating the use of the Heroku Signature Add-On. See below to get started.
 
 ## Get Started
 
