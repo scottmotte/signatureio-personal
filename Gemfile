@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby '1.9.3'
 
+gem 'sqlite3'
+
 gem 'heroku'
 gem 'jquery-rails'
 gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
